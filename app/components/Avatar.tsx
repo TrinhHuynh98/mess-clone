@@ -7,7 +7,7 @@ import React from "react";
 import avarta from "../../public/images/avarta.jpg";
 
 interface IAvartar {
-  userInfo: User;
+  userInfo?: User;
 }
 
 const Avatar: React.FC<IAvartar> = ({ userInfo }) => {

@@ -18,7 +18,7 @@ const DesktopSidebar: React.FC<IDestopSidebar> = ({ userInfo }) => {
       <SettingModal
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-        currentuser={userInfo}
+        currentuser={userInfo!}
       />
       <div
         className="
@@ -52,7 +52,7 @@ const DesktopSidebar: React.FC<IDestopSidebar> = ({ userInfo }) => {
             onClick={() => setIsOpen(true)}
             className="cursor-pointer hover:opacity-75 transition"
           >
-            <Avatar userInfo={userInfo} />
+            <Avatar userInfo={userInfo!} />
           </div>
         </nav>
       </div>

@@ -15,7 +15,7 @@ import { Buttons } from "../Buttons";
 import PlaceHolder from "../../../public/images/avarta.jpg";
 
 interface ISettingModal {
-  isOpen: boolean;
+  isOpen?: boolean;
   onClose: () => void;
   currentuser: User;
 }

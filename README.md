@@ -1,12 +1,44 @@
-Install some package/libs:
+#Messeneger Clone Project Typescript + NextJS + TailwindCss
 
-```bash
-npm i react-icon
-npm i @tailwindcss/forms
-npm i next-auth@latest @prisma/client @next-auth/prisma-adapter bcrypt
-npm i -D @types/bcrypt
-npm i react-hot-toast axios
-npm i react-hook-form
-npm i next-cloudinary
+**Node version 16.x**
 
+[CREATE NEW PROJECT NEXTJS](https://tailwindcss.com/docs/guides/nextjs)
+
+### Install packages
+
+```shell
+npm i
+```
+
+### Setup .env file
+
+```js
+DATABASE_URL=
+NEXTAUTH_SECRET=
+
+GITHUB_ID=
+GITHUB_SECRET=
+
+GOOGLE_ID=
+GOOGLE_SECRET=
+
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+
+NEXT_PUBLIC_PUSHER_APP_KEY=
+PUSHER_APP_ID=
+PUSHER_SECRET=
+```
+
+### Setup Prisma
+
+```shell
+npx prisma init
+npx prisma db push
+
+```
+
+### Start the app
+
+```shell
+npm run dev
 ```
