@@ -7,5 +7,6 @@ npm i next-auth@latest @prisma/client @next-auth/prisma-adapter bcrypt
 npm i -D @types/bcrypt
 npm i react-hot-toast axios
 npm i react-hook-form
+npm i next-cloudinary
 
 ```

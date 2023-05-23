@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,4 +8,14 @@ html,
 body,
 :root {
   height: 100%;
+}
+
+@layer components {
+  .btn-close {
+    @apply rounded-full bg-sky-500 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2;
+  }
+
+  .btn-trash {
+    @apply p-2 bg-red-100 text-red-500 rounded-full flex items-center justify-center hover:bg-red-500 hover:text-white;
+  }
 }

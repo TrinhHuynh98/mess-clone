@@ -1,5 +1,6 @@
 "use client";
 
+import useActiveList from "@/hooks/useActiveList";
 import { User } from "@prisma/client";
 import Image from "next/image";
 import React from "react";
@@ -10,7 +11,9 @@ interface IAvartar {
 }
 
 const Avatar: React.FC<IAvartar> = ({ userInfo }) => {
-  //   const isActive =
+  const { members } = useActiveList();
+  const isActive = members.indexOf(userInfo?.email!) !== -1;
+
   return (
     <div className="relative">
       <div
@@ -31,9 +34,9 @@ const Avatar: React.FC<IAvartar> = ({ userInfo }) => {
           alt="Avarta"
         />
       </div>
-      {/* {isActive ? ( */}
-      <span
-        className="
+      {isActive ? (
+        <span
+          className="
             absolute 
             block 
             rounded-full 
@@ -47,8 +50,8 @@ const Avatar: React.FC<IAvartar> = ({ userInfo }) => {
             md:h-3 
             md:w-3
           "
-      />
-      {/* ) : null} */}
+        />
+      ) : null}
     </div>
   );
 };

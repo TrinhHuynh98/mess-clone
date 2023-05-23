@@ -3,20 +3,20 @@ import { useMemo } from "react";
 
 const useConservation = () => {
   const param = useParams();
-  const conversionId = useMemo(() => {
-    if (!param?.conversionId) {
+  const conservationId = useMemo(() => {
+    if (!param?.conservationId) {
       return "";
     }
-    return param.conversionId as string;
-  }, [param?.conversionId]);
-  const isOpen = useMemo(() => !!conversionId, [conversionId]);
+    return param.conservationId as string;
+  }, [param?.conservationId]);
+  const isOpen = useMemo(() => !!conservationId, [conservationId]);
 
   return useMemo(
     () => ({
-      conversionId,
+      conservationId,
       isOpen,
     }),
-    [isOpen, conversionId]
+    [isOpen, conservationId]
   );
 };
 
