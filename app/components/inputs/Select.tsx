@@ -35,7 +35,7 @@ const Select: React.FC<ISelect> = ({
             menuPortal: (base) => ({ ...base, zIndex: 9999 }),
           }}
           classNames={{
-            control: () => "text-sm",
+            control: () => "text-sm rounded-md shadow-sm",
           }}
         />
       </div>

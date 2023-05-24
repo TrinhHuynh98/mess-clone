@@ -6,6 +6,8 @@ import { useCallback, useEffect, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { SocialButton } from "./SocialButton";
 import { BsGithub, BsGoogle } from "react-icons/bs";
+import github from "../../../public/images/GitHub-icon.png";
+import google from "../../../public/images/google-icon.png";
 import axios from "axios";
 import { signIn, useSession } from "next-auth/react";
 import { toast } from "react-hot-toast";
@@ -89,7 +91,6 @@ const AuthForm = () => {
 
   const loginWithSocial = (action: string) => {
     setIsLoading(true);
-
     signIn(action, { redirect: false })
       .then((callback) => {
         if (callback?.error) {
@@ -104,7 +105,7 @@ const AuthForm = () => {
 
   return (
     <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-      <div className="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
+      <div className="login-form">
         <form className="space-y-6" onSubmit={handleSubmit(onSumit)}>
           {variant === "REGISTER" && (
             <Input
@@ -156,23 +157,27 @@ const AuthForm = () => {
         <div className="mt-6 flex gap-2">
           <SocialButton
             icon={BsGithub}
+            image={github}
             onClick={() => loginWithSocial("github")}
           />
           <SocialButton
             icon={BsGoogle}
+            image={google}
             onClick={() => loginWithSocial("google")}
           />
         </div>
 
         <div className="flex gap-2 justify-center text-sm mt-4 px-2 text-gray-500">
           <div>
-            {variant === "LOGIN" ? "New messeger" : "Already have an account? "}
+            {variant === "LOGIN"
+              ? "Not have an account?"
+              : "Already have an account? "}
           </div>
           <div
             onClick={handleChangeVariant}
-            className="underline cursor-pointer"
+            className="underline cursor-pointer text-sky-600"
           >
-            {variant === "LOGIN" ? "Create new account" : "Login"}
+            {variant === "LOGIN" ? "Register" : "Login"}
           </div>
         </div>
       </div>

@@ -1,8 +1,14 @@
 "use client";
 
 import { Dialog, Transition } from "@headlessui/react";
-import React, { Fragment } from "react";
-import { ClipLoader } from "react-spinners";
+import React, { CSSProperties, Fragment } from "react";
+import { HashLoader } from "react-spinners";
+
+const override: CSSProperties = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "#0284c7",
+};
 
 const LoadingModal = () => {
   return (
@@ -49,7 +55,13 @@ const LoadingModal = () => {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               <Dialog.Panel>
-                <ClipLoader size={40} color="#0284c7" />
+                <HashLoader
+                  size={40}
+                  color="#0284c7"
+                  cssOverride={override}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                />
               </Dialog.Panel>
             </Transition.Child>
           </div>

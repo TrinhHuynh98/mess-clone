@@ -31,7 +31,9 @@ const Input: React.FC<IInput> = ({
           type={type}
           autoComplete={id}
           disabled={disabled}
-          {...register(id, { required })}
+          {...register(id, {
+            required,
+          })}
           className={clsx(
             `
             form-input
@@ -51,6 +53,7 @@ const Input: React.FC<IInput> = ({
             focus:ring-sky-600 
             sm:text-sm 
             sm:leading-6
+            border-gray-200 shadow-sm 
           `,
             errors[id] && "focus:ring-rose-500",
             disabled && "opacity-50 cursor-default"

@@ -106,6 +106,7 @@ const ProfileDrawer: React.FC<IProfileDrawer> = ({ isOpen, onClose, data }) => {
                               onClick={() => setConfirmOpen(true)}
                               className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-75"
                             >
+                                
                               <div className="btn-trash">
                                 <IoTrash size={22} />
                               </div>
