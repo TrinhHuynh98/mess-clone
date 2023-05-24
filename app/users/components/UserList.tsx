@@ -4,7 +4,7 @@ import { User } from "@prisma/client";
 import React from "react";
 import UserBox from "./UserBox";
 interface IUserList {
-  users: User[] | undefined;
+  users: User[];
 }
 const UserList: React.FC<IUserList> = ({ users }) => {
   console.log("users", users);
