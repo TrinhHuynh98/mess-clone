@@ -4,9 +4,10 @@ import { User } from "@prisma/client";
 import React from "react";
 import UserBox from "./UserBox";
 interface IUserList {
-  users: User[];
+  users: User[] | undefined;
 }
 const UserList: React.FC<IUserList> = ({ users }) => {
+  console.log("users", users);
   return (
     <aside
       className="
@@ -29,7 +30,7 @@ const UserList: React.FC<IUserList> = ({ users }) => {
             Friends
           </div>
         </div>
-        {users.map((item) => (
+        {users?.map((item) => (
           <UserBox user={item} key={item.id} />
         ))}
       </div>
